@@ -126,4 +126,11 @@ document.addEventListener('DOMContentLoaded', function() {
     result.innerHTML = result.innerHTML * -1;
   }
 
+  var percent = document.getElementById('percent');
+  percent.addEventListener('click', percentClicked);
+
+  function percentClicked(event) {
+    result.innerHTML = result.innerHTML / 100;
+  }
+
 });
