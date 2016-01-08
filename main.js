@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
   function operatorClicked(event) {
     if (isCalculating) {
-      result.innerHTML(solve());
+      result.innerHTML = solve();
     }
     switch (event.target.id) {
       case 'add':
@@ -58,25 +58,50 @@ document.addEventListener('DOMContentLoaded', function() {
   equal.addEventListener('click', equalClicked);
 
   function equalClicked(event) {
-    result.innerHTML(solve());
+    result.innerHTML = solve();
     clearAll();
   }
 
   function solve() {
-    var runningTotal = parseFloat(result.innerHTML);
+    var current = parseFloat(result.innerHTML);
     var total;
     switch (operator) {
       case '+':
-        total = operand + runningTotal;
+        total = operand + current;
         break;
       case '-':
-        total = runningTotal - operand;
+        total = operand - current;
         break;
       case 'x':
-        total = operand * runningTotal;
+        total = operand * current;
         break;
-      case ÷
+      case '÷':
+        if (current === 0) {
+          total = 'Error: undefined'
+        } else {
+          total = operand / current;
+        }
+        break;
+        default: total = current;
     }
+    return total;
+  }
+
+  var clear = document.getElementById('clear');
+  clear.addEventListener('click', clearClicked);
+
+  function clearClicked(event) {
+    clearAll();
+    result.innerHTML = "0";
+  }
+
+  function clearAll() {
+    isFloating = false;
+    needsCleared = true;
+    isCalculating = false;
+    operand = null;
+    operator = null;
+    currentOperator.innerHTML = '';
   }
 
 });
