@@ -2,7 +2,7 @@
 
 document.addEventListener('DOMContentLoaded', function() {
 
-  var isFloating = false;
+  var isFloat = false;
   var needsCleared = false;
   var isCalculating = false;
   var operand;
@@ -92,11 +92,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
   function clearClicked(event) {
     clearAll();
-    result.innerHTML = "0";
+    result.innerHTML = '0';
   }
 
   function clearAll() {
-    isFloating = false;
+    isFloat = false;
     needsCleared = true;
     isCalculating = false;
     operand = null;
@@ -108,7 +108,15 @@ document.addEventListener('DOMContentLoaded', function() {
   point.addEventListener('click', pointClicked);
 
   function pointClicked(event) {
-
+    if (needsCleared) {
+      result.innerHTML = '0';
+      needsCleared = false;
+    } else {
+      if (!isFloat) {
+        result.innerHTML = result.innerHTML.concat('.');
+      }
+    }
+    isFloat = true;
   }
 
 });
