@@ -82,7 +82,7 @@ document.addEventListener('DOMContentLoaded', function() {
           total = operand / current;
         }
         break;
-        default: total = current;
+      default: total = current;
     }
     return total;
   }
@@ -117,6 +117,13 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     }
     isFloat = true;
+  }
+
+  var inverse = document.getElementById('negative');
+  inverse.addEventListener('click', inverseClicked);
+
+  function inverseClicked(event) {
+    result.innerHTML = result.innerHTML * -1;
   }
 
 });
