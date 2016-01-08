@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', function() {
       needsCleared = false;
       result.innerHTML = event.target.id;
     } else {
-      result.innerHTML = result.innerHTML.concat(event.target.id);
+      result.innerHTML = result.innerHTML.concat(event.target.innerHTML);
     }
   }
 
@@ -102,6 +102,13 @@ document.addEventListener('DOMContentLoaded', function() {
     operand = null;
     operator = null;
     currentOperator.innerHTML = '';
+  }
+
+  var point = document.getElementById('decimal');
+  point.addEventListener('click', pointClicked);
+
+  function pointClicked(event) {
+
   }
 
 });
