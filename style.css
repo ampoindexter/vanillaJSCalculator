@@ -1,0 +1,58 @@
+#calculator {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 24px;
+  width: 500px;
+  margin: auto;
+  border: 5px solid #333;
+  border-radius: 5px;
+  background-color: #0f0
+}
+
+#display {
+  width: 500px;
+  height: 75px;
+  background-color: #0f0;
+  padding-top: 5px;
+  text-align: right;
+  padding-top: 20px;
+  font-size: 50px;
+}
+
+#currentOperator {
+  width: 10%;
+  float: left;
+}
+
+#result {
+  padding-right: 15px;
+}
+
+.btn {
+  display: inline-block;
+  border: 1px solid black;
+  margin: 1px;
+  width: 24%;
+  height: 60px;
+  text-align: center;
+  padding-top: 25px;
+}
+
+.btn:active {
+  background-color: #ddd
+}
+
+.number, #decimal {
+  background-color: #7403ab;
+}
+
+.operator, #equals {
+  background-color: #ffa500;
+}
+
+#percent, #negative, #clear {
+  background-color: #ff00b3;
+}
+
+#\30 {
+  width: 48.7%;
+}
