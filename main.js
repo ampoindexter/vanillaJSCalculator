@@ -133,4 +133,43 @@ document.addEventListener('DOMContentLoaded', function() {
     result.innerHTML = result.innerHTML / 100;
   }
 
+  document.addEventListener('keypress', keyPressed);
+
+  function keyPressed(event) {
+    var ascii = event.keyCode;
+    var id;
+    if (ascii > 47 && ascii < 58) {
+      document.getElementById(String.fromCharCode(ascii)).click();
+    } else {
+      switch (ascii) {
+        case 42:
+          id = '#multiply';
+          break;
+        case 43:
+          id = '#plus';
+          break;
+        case 45:
+          id = '#subtract';
+          break;
+        case 46:
+          id = '#decimal';
+          break;
+        case 47:
+          id = '#divide';
+          break;
+        case 95:
+          id = '#negative';
+          break;
+        case 99:
+          id = '#clear';
+          break;
+        case 13:
+        case 61:
+          id = '#equals';
+          break;
+      }
+      document.getElementById(String.fromCharCode(ascii)).click();
+    }
+  }
+
 });
